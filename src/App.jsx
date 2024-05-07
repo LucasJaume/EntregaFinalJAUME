@@ -7,7 +7,7 @@ import useContador from "./hooks/useContador";
 import MonoPatin from "./componentes/Router/MonoPatin";
 import Skate from "./componentes/Router/Skate";
 import Bicicleta from "./componentes/Router/Bicicleta";
-import ItemDetail from "./componentes/Router/ItemDetail";
+import ItemDetailWithId from "./componentes/Router/ItemDetailWithId";
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/Bicicletas" element={<Bicicleta/>} />
           <Route path="/Skates" element={<Skate/>} />
           <Route path="/MonoPatines" element={<MonoPatin/>} />
-          <Route path="/item/:id" element={<ItemDetail/>} />
+          <Route path="/item/:id" element={<ItemDetailWithId/>} />
           <Route path="/*" element={<h1>NOT FOUND</h1>} />
         </Routes>
       </Layout>

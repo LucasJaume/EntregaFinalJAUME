@@ -7,8 +7,18 @@ export default function ItemListContainer({ category, id }) {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    // Si se obtiene una categoría, obtenemos los productos por esa categoría
-    if (category) {
+    // Si se proporciona una categoría y un ID, prioriza el ID
+    if (id) {
+      getProdById(id)
+        .then((data) => {
+          setProductos([data]); 
+          setCargando(false);
+        })
+        .catch((error) => {
+          console.log("Error fetching producto by ID");
+          setCargando(false);
+        });
+    } else if (category) {
       getProdByCategoria(category)
         .then((data) => {
           setProductos(data);
@@ -17,20 +27,8 @@ export default function ItemListContainer({ category, id }) {
         .catch((error) => {
           console.error("Error fetching productos by categoria");
           setCargando(false);
-        });//lo mismo si se obitiene id
-    } else if(id){
-      console.log("Entra aca?¿")
-      getProdById(id)
-      .then((data)=>{
-        setProductos(data)
-        setCargando(false)
-      })
-      .catch((error)=>{
-        console.log("Error fetching productos by ID")
-        setCargando(false)
-      })
-    }else {
-      console.log("Mepa que entra aca siip")
+        });
+    } else {
       getProd()
         .then((data) => {
           setProductos(data);
@@ -41,7 +39,7 @@ export default function ItemListContainer({ category, id }) {
           setCargando(false);
         });
     }
-  }, [category]);
+  }, [category, id]);
 
   return (
     <div>

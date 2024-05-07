@@ -64,13 +64,22 @@ export const getProd=()=>{
     })
 }
 
-export const getProdById = (id)=>{
-  return new Promise((resolve) => {
-    setTimeout(()=>{
-      resolve(productos.filter((producto)=>producto.id===id))
-    },2300)
+export const getProdById = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const productId = parseInt(id); // Convertir el ID a número
+      const producto = productos.find((producto) => producto.id === productId);
+      if (producto) {
+        resolve(producto);
+      } else {
+        reject("Producto no encontrado");
+      }
+    }, 2300);
   });
-}
+};
+
+
+
 
 export const getProdByCategoria = (category)=>{
   return new Promise((resolve) => {
