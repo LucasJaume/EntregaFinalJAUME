@@ -1,5 +1,5 @@
 import { useState } from "react";
-import IconoCarrito from "./IconoCarrito";
+import IconoCarrito from "../IconoCarrito/IconoCarrito";
 
 function CarritoWidget() {
   const [itemCarrito, setItemCarrito] = useState(0);
@@ -7,7 +7,7 @@ function CarritoWidget() {
   return (
     <div>
       <IconoCarrito ancho={50} largo={50} />
-      <span>{itemCarrito}</span>
+      <span id="numCarrito">{itemCarrito}</span>
     </div>
   );
 }

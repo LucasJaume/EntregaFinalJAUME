@@ -1,0 +1,78 @@
+.layoutContenedor {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layoutHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+}
+
+.layoutHeader h1 {
+    margin: 0;
+    color: #333333;
+}
+
+.layoutHeader .categorias {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.layoutHeader .categorias li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.layoutHeader .categorias li a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.layoutHeader .categorias li a:hover {
+    text-decoration: underline;
+}
+
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.Navbar .categorias {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Navbar .categorias li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.Navbar .categorias li:last-child {
+    margin-right: 0;
+}
+
+.Navbar .categorias li a {
+    color: #555555;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.Navbar .categorias li a:hover {
+    text-decoration: underline;
+}
+
+.Navbar .IconoCarrito {
+    fill: #555555;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}

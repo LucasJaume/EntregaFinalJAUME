@@ -1,6 +1,5 @@
-import CarritoWidget from "../CarritoWidget";
-import Categorias from "../Categorias";
-import "./NavBar.css";
+import CarritoWidget from "../CarritoWidget/CarritoWidget";
+import Categorias from "../Categorias/Categorias";
 
 function NavBar() {
   return (

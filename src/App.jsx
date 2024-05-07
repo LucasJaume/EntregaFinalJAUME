@@ -1,17 +1,14 @@
 import "./App.css";
-import Brand from "./componentes/Brand";
-import ItemListContainer from "./componentes/ItemListContainer";
-import NavBar from "./componentes/NavBar/NavBar";
+import Contador from "./componentes/Contador/Contador";
+import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
+import Layout from "./componentes/Layout/Layout";
+import useContador from "./hooks/useContador";
 
 function App() {
   return (
-    <div>
-      <div className="NavbarApp">
-        <Brand />
-        <NavBar />
-      </div>
-      <ItemListContainer greeting={"Buenos Dias!"} />
-    </div>
+    <Layout>
+      <ItemListContainer greeting={"Buenos Dias!"}/>
+    </Layout>
   );
 }
 
