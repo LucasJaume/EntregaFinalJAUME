@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
+
 function Brand() {
   return (
-    <div>
-      <h1>SobreRuedas</h1>
+    <div className="brand">
+      <NavLink to="/"><h1>SobreRuedas</h1></NavLink>
     </div>
   );
 }

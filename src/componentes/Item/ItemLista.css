@@ -8,9 +8,10 @@
   }
   
   .itemContainer {
-    width: 300px;  
-    height: 1000px;
+    width: 400px;  
+    height: 800px;
     margin-bottom: 20px;
+    padding: 50px;
     border: 1px solid #ccc; 
     border-radius: 8px; 
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 

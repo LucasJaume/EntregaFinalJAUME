@@ -1,16 +1,21 @@
+import { NavLink } from "react-router-dom";
 import "./Categorias.css";
+
 
 function Categorias() {
   return (
     <ul className="categorias">
       <li>
-        <a href="/#">Bicicletas</a>
+        <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/">inicio</NavLink>
       </li>
       <li>
-        <a href="/#">Skate</a>
+        <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/Bicicletas">Bicicletas</NavLink>
       </li>
       <li>
-        <a href="/#">MonoPatines</a>
+        <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/Skates" >Skates</NavLink>
+      </li>
+      <li>
+        <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/MonoPatines">MonoPatines</NavLink>
       </li>
     </ul>
   );

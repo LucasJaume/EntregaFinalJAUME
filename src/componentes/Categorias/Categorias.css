@@ -23,3 +23,7 @@
 .categorias li a:hover {
   color: #363333;
 }
+
+.linkActivo{
+  background-color: lightblue;
+}
