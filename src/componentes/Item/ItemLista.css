@@ -1,7 +1,7 @@
 .listaDeProductos {
     display: flex;
-    flex-wrap: wrap; /* Esto hace que los elementos se envuelvan cuando no hay espacio */
-    justify-content: space-around; /* Distribuye los elementos equitativamente con espacio alrededor */
+    flex-wrap: wrap; 
+    justify-content: space-around; 
     list-style: none;
     padding: 0;
     margin-top: 50px;

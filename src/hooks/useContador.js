@@ -11,5 +11,8 @@ export default function useContador(initialValue=0){
         setCantidad(cantidad-1)
     }
 
-    return {cantidad, sumar, restar}
+    const reset=()=>{
+        setCantidad(initialValue)
+    }
+    return {cantidad, sumar, restar, reset}
 }

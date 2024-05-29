@@ -1,15 +1,41 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getProdById } from "../componentes/Mock/MockAsincro";
+import { getProd, getProdByCategoria, getProdById } from "../componentes/Mock/MockAsincro";
 
- export default function useProducto(id){
-    const [producto, setProducto]=useState([])
+ export default function useProducto(categoria){
+    const [productos, setProductos]=useState([])
     const [cargando, setCargando]=useState(true)
 
-    useEffect(()=>{
-      getProdById(id).then((data)=>setProducto(data))
-        .finally(()=>setCargando(false))
-      },[])
+    // useEffect(()=>{
+    //   setCargando(true)
+    //   if(categoria){
+    //     getProdByCategoria(categoria)
+    //   .then((data)=>setProductos(data))
+    //   .finally(()=>setCargando(false))
+    //   }else{
+    //     getProd()
+    //     .then((data)=>setProductos(data))
+    //     .finally(()=>setCargando(false))
+    //   }
+    // },[categoria])
 
-      return {producto, cargando}
+
+    useEffect(() => {
+      setCargando(true); // Asegúrate de restablecer el estado de cargando
+      if (categoria) {
+        getProdByCategoria(categoria)
+          .then((data) => {
+            setProductos(data);
+          })
+          .finally(() => setCargando(false));
+      } else {
+        getProd()
+          .then((data) => {
+            setProductos(data);
+          })
+          .finally(() => setCargando(false));
+      }
+    }, [categoria]);
+    
+      return {productos, cargando}
  }

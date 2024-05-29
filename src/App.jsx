@@ -4,25 +4,25 @@ import Contador from "./componentes/Contador/Contador";
 import ItemListContainer from "./componentes/ItemListContainer/ItemListContainer";
 import Layout from "./componentes/Layout/Layout";
 import useContador from "./hooks/useContador";
-import MonoPatin from "./componentes/Router/MonoPatin";
-import Skate from "./componentes/Router/Skate";
-import Bicicleta from "./componentes/Router/Bicicleta";
-import ItemDetailWithId from "./componentes/Router/ItemDetailWithId";
+import ItemDetailContainer from "./componentes/itemDetailContainer/ItemDetailContainer";
+import CartProvider from "./contexts/CartContext/CartProvider";
+import CarritoContainer from "./componentes/CarritoContainer/CarritoContainer";
 
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/Bicicletas" element={<Bicicleta/>} />
-          <Route path="/Skates" element={<Skate/>} />
-          <Route path="/MonoPatines" element={<MonoPatin/>} />
-          <Route path="/item/:id" element={<ItemDetailWithId/>} />
-          <Route path="/*" element={<h1>NOT FOUND</h1>} />
-        </Routes>
-      </Layout>
+      <CartProvider>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/categoria/:nombreCategoria" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/carrito" element={<CarritoContainer />} />
+            <Route path="/*" element={<h1>NOT FOUND</h1>} />
+          </Routes>
+        </Layout>
+      </CartProvider>
     </BrowserRouter>
   );
 }
