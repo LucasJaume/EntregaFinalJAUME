@@ -2,6 +2,7 @@ import { useContext } from "react";
 import CartContext from "../../contexts/CartContext/CartContext";
 import ItemCarrito from "../ItemCarrito/ItemCarrito";
 import "./CarritoContainer.css"
+import { Link } from "react-router-dom";
 export default function CarritoContainer() {
     const { cart, clearCart, cartTotal } = useContext(CartContext);
 
@@ -13,12 +14,15 @@ export default function CarritoContainer() {
                     <h3>No se encuentran productos</h3>
                 ) : (
                     cart.map((item) => {
-                        return <ItemCarrito key={item.producto.div} item={item} />
+                        return <ItemCarrito key={item.producto.id} item={item} />
                     })
                 )}
             </div>
             <button onClick={clearCart}>Limpiar Carrito</button>
             <h4>Total: ${cartTotal}</h4>
+            <Link className="comprar" to={"/checkout"}>
+                Finalizar compra
+            </Link>
         </div>
     );
 }

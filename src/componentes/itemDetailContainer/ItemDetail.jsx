@@ -31,6 +31,7 @@ export default function ItemDetail({ item }) {
                     Agregar a carrito!
                 </button>
             </div>
+            <h4 className="cantidad">quedan {item.stock} productos en stock.</h4>
         </div>
     );
 }

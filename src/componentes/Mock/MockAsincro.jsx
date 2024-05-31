@@ -69,7 +69,7 @@ const productos = [
     description: "Skate Profesional Scooter Italy Retro Serie. Skateboard profesional de la línea Neon & Graffiti Series es la combinación perfecta entre calidad, diseño y rendimiento.",
     category: "skates",
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_969482-MLU75966137382_052024-F.webp",
-    stock: 2
+    stock: 5
   },
   {
     id: 9,
@@ -105,7 +105,7 @@ const productos = [
     description: "El Bestial Wolf Hunter-56 es un scooter profesional de alta gama, ideal para aquellos que buscan un equipo fiable, con una construcción robusta, componentes de alta calidad y diseño ergonómico.",
     category: "monopatines",
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_786666-MLA71547409905_092023-F.webp",
-    stock: 4
+    stock: 8
   },
 ]
 

@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import CartContext from "./CartContext";
 
 export default function CartProvider({ children }) {
-    const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState(
+        localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+    );
 
     const addToCart = (producto, cantidad) => {
         const itemEnCarrito = cart.find((item) => item.producto.id === producto.id);
@@ -19,6 +21,10 @@ export default function CartProvider({ children }) {
             setCart([...cart, { producto, cantidad }]);
         }
     };
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart])
 
     const removeFromCart = (prodId, cantidad) => {
         const itemEnCarrito = cart.find((item) => item.producto.id === prodId);

@@ -21,7 +21,7 @@ function Categorias() {
     <nav>
       <ul className="categorias">
         {MIS_RUTAS.map((ruta) => (
-          <li key={MIS_RUTAS.path}>
+          <li key={ruta.path}>
             <NavLink className={({ isActive }) => (isActive ? "linkActivo" : "")} to={ruta.path}>
               {ruta.label}
             </NavLink>
@@ -33,24 +33,6 @@ function Categorias() {
 
 
 
-
-
-  // return (
-  //   <ul className="categorias">
-  //     <li>
-  //       <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/">inicio</NavLink>
-  //     </li>
-  //     <li>
-  //       <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/Bicicletas">Bicicletas</NavLink>
-  //     </li>
-  //     <li>
-  //       <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/Skates" >Skates</NavLink>
-  //     </li>
-  //     <li>
-  //       <NavLink className={({isActive})=> (isActive ? "linkActivo" : "")} to="/MonoPatines">MonoPatines</NavLink>
-  //     </li>
-  //   </ul>
-  // );
 }
 
 export default Categorias;

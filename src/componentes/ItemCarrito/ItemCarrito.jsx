@@ -1,5 +1,5 @@
 // src/componentes/ItemCarrito/ItemCarrito.jsx
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "./ItemCarrito.css";
 import CartContext from "../../contexts/CartContext/CartContext";
 
